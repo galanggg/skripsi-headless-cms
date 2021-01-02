@@ -39,5 +39,6 @@ export async function getStaticProps({ preview = false }) {
     props: {
       homePage,
     },
+    revalidate: 1
   }
 }
