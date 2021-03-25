@@ -1,0 +1,24 @@
+fetch post by Categories
+
+query MyQuery {
+  categories {
+    edges {
+      node {
+        name
+        posts {
+          edges {
+            node {
+              id
+            }
+          }
+          nodes {
+            email {
+              email
+            }
+            title
+          }
+        }
+      }
+    }
+  }
+}
