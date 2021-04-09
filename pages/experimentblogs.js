@@ -33,22 +33,21 @@ const imageVariants = {
 
 //Default Client Side Rendering
 
-/* const client = new ApolloClient({
-   link: new HttpLink({
-     uri: `https://next.kesato.io/graphql`,
-     credentials: 'same-origin',
-   }),
-   cache: new InMemoryCache(),
-  })
-*/
+// const client = new ApolloClient({
+//   link: new HttpLink({
+//     uri: 'https://next.kesato.io/graphql',
+//     credentials: 'same-origin',
+//   }),
+//   cache: new InMemoryCache(),
+// })
 
-const Experimental = () => {
+const Experimental = ({ apolloClient }) => {
   return (
-    // <ApolloProvider client={apolloClient}>
-    <div className="blogs">
-      <Posts />
-    </div>
-    // </ApolloProvider>
+    <ApolloProvider client={apolloClient}>
+      <div className="blogs">
+        <Posts />
+      </div>
+    </ApolloProvider>
   )
 }
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Container from '../Container'
 import styled from 'styled-components'
+import Image from 'next/image'
 
 const SvgPlay = styled.svg`
   top: 50%;
@@ -28,7 +29,13 @@ const Videography = ({ videography }) => {
             </div>
           </div>
           <div className="image-video pt-5 relative">
-            <img className="object-cover" src={videography} alt="video-image" />
+            <Image
+              className="object-cover"
+              width={1200}
+              height={400}
+              src={videography}
+              alt="video-image"
+            />
             <button
               onClick={() => setShowModal(true)}
               style={{ transition: 'all .15s ease' }}

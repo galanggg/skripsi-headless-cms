@@ -1,7 +1,7 @@
 import React from 'react'
 import Card2 from './Card2'
 const CardList2 = ({ error, loading, data, posts, fetchMore }) => {
-  console.log(posts)
+  // console.log(posts)
   return (
     <div className="container m-auto">
       <div className="mt-5">

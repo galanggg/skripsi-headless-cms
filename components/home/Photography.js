@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Container from '../Container'
 import { Masonry } from 'masonic'
+import Image from 'next/image'
 
 const MasonryCard = ({ data }) => {
   return <img src={data.sourceUrl} />

@@ -58,8 +58,16 @@ function start_env_backend() {
 function start_env_frontend() {
 
     echo -e $BOLD "💻 Starting frontend"$NOCOLOR
-    npm i --prefix frontend/
-    npm run dev --prefix frontend/
+    # npm i --prefix frontend/
+    npm run dev
+}
+
+# Add new URL Wordpress
+function add_url_headless() {
+    read -p "$(echo -e  $BOLD"✍️  Masukkan URL Wordpress GraphQL Anda: "$NOCOLOR)" url_headless_wordpress
+    ! [ -z "$url_headless_wordpress" ] && echo -e "\nNEXT_PUBLIC_WORDPRESS_URL=$url_headless_wordpress" >> .env
+    echo -e $GREEN$BOLD"✅ Successfully menambahkan URL ke .env file"$NOCOLOR
+
 }
 
 # Check URL
@@ -111,6 +119,7 @@ function command_help() {
     echo "start-all       Creates and starts docker environment for WP and runs Next JS server"
     echo "start-backend   Creates and starts docker environment"
     echo "start-frontend  Runs Next JS server"
+    echo "add-url         Add WORDPRESS_URL"  
     echo "stop            Stops the WordPress docker containers"
 }
 
@@ -123,6 +132,7 @@ function main() {
         "start-backend" ) start_env_backend ;;
         "start-frontend" ) start_env_frontend ;;
         "start-all" ) start_env_backend && start_env_frontend ;;
+        "add-url" ) add_url_headless ;;
         "stop" ) docker_container_stop ;;
         * ) command_help ;;
     esac

@@ -8,12 +8,12 @@ const OurClient = dynamic(() => import('../components/home/OurClient'))
 const Contact = dynamic(() => import('../components/home/Contact'))
 const Footer = dynamic(() => import('../components/home/Footer'))
 
-import { getAllPages } from '../lib/api'
+import { getAllPages, getAllPageById } from '../lib/api'
 import Container from '../components/Container'
 
-export default function Home({ homePage: { edges } }) {
-  const homepage = edges[0]?.node
-  console.log(homepage)
+export default function Home({ homePage }) {
+  const homepage = homePage
+  console.log(homePage)
   return (
     <>
       <Container>
@@ -34,7 +34,7 @@ export default function Home({ homePage: { edges } }) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const homePage = await getAllPages(preview)
+  const homePage = await getAllPageById(preview)
   return {
     props: {
       homePage,
