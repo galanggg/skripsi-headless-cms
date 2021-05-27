@@ -4,9 +4,8 @@ import gql from 'graphql-tag'
 import PostList from './ExperimentalBlog'
 import HeroBlog2 from './HeroBlog2'
 import Container from '../Container'
-import dynamic from 'next/dynamic'
-const Nav = dynamic(() => import('../home/Navbar'))
 import CardList2 from './CardList2'
+import Header from '../migrate/Header'
 import { motion } from 'framer-motion'
 
 //Animation for blog section
@@ -94,8 +93,8 @@ const Posts = () => {
   }
   return (
     <div className="blogs">
+      <Header />
       <Container>
-        <Nav />
         <motion.div initial="exit" animate="enter" exit="exit">
           <motion.div variants={imageVariants} className="lg:px-16 px-6 mt-10">
             {heroPost && (
@@ -122,7 +121,7 @@ const Posts = () => {
         <div className="flex my-5 justify-center">
           {pageInfo.hasPreviousPage ? (
             <button
-              className="border border-teal-500 text-teal-500 block rounded-sm font-bold py-4 px-6 mr-2 flex items-center hover:bg-teal-500 hover:text-white"
+              className="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
               onClick={() => {
                 fetchMore({
                   variables: {
@@ -140,7 +139,7 @@ const Posts = () => {
           ) : null}
           {pageInfo.hasNextPage ? (
             <button
-              className="border border-teal-500 bg-teal-500 text-white block rounded-sm font-bold py-4 px-6 ml-2 flex items-center"
+              className="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
               onClick={() => {
                 fetchMore({
                   variables: {
