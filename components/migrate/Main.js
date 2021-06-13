@@ -5,7 +5,13 @@ const Main = ({
   heroImageRight,
   heroImageLeft,
   client,
+  textLeft,
+  textLeftDescription,
+  textRight,
+  textRightDescription,
+  advantagesSection,
 }) => {
+  console.log(advantagesSection)
   return (
     <main>
       <div className="relative">
@@ -15,7 +21,7 @@ const Main = ({
             <div className="absolute inset-0">
               <img
                 className="h-full w-full object-cover"
-                src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2830&q=80&sat=-100"
+                src={heroImage}
                 alt="People working on laptops"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-purple-800 to-indigo-700 mix-blend-multiply"></div>
@@ -95,14 +101,10 @@ const Main = ({
                 </div>
                 <div className="mt-6">
                   <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
-                    Stay on top of customer support
+                    {textLeft}
                   </h2>
                   <p className="mt-4 text-lg text-gray-500">
-                    Semper curabitur ullamcorper posuere nunc sed. Ornare
-                    iaculis bibendum malesuada faucibus lacinia porttitor.
-                    Pulvinar laoreet sagittis viverra duis. In venenatis sem
-                    arcu pretium pharetra at. Lectus viverra dui tellus ornare
-                    pharetra.
+                    {textLeftDescription}
                   </p>
                   <div className="mt-6">
                     <a
@@ -151,14 +153,10 @@ const Main = ({
                 </div>
                 <div className="mt-6">
                   <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
-                    Better understand your customers
+                    {textRight}
                   </h2>
                   <p className="mt-4 text-lg text-gray-500">
-                    Semper curabitur ullamcorper posuere nunc sed. Ornare
-                    iaculis bibendum malesuada faucibus lacinia porttitor.
-                    Pulvinar laoreet sagittis viverra duis. In venenatis sem
-                    arcu pretium pharetra at. Lectus viverra dui tellus ornare
-                    pharetra.
+                    {textRightDescription}
                   </p>
                   <div className="mt-6">
                     <a
@@ -194,39 +192,44 @@ const Main = ({
             magna sit morbi lobortis. Blandit aliquam sit nisl euismod mattis
             in.
           </p>
-          <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-16">
-            <div>
-              <div>
-                <span className="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
-                  <svg
-                    className="h-6 w-6 text-white"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
-                    />
-                  </svg>
-                </span>
-              </div>
-              <div className="mt-6">
-                <h3 className="text-lg font-medium text-white">
-                  Unlimited Inboxes
-                </h3>
-                <p className="mt-2 text-base text-purple-200">
-                  Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.
-                  Et magna sit morbi lobortis.
-                </p>
-              </div>
-            </div>
 
-            <div>
+          <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-16">
+            {Object.values(advantagesSection).map((section) => {
+              return (
+                <div>
+                  <div>
+                    <span className="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
+                      <svg
+                        className="h-6 w-6 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <div className="mt-6">
+                    <h3 className="text-lg font-medium text-white">
+                      {section}
+                    </h3>
+                    <p className="mt-2 text-base text-purple-200">
+                      Ac tincidunt sapien vehicula erat auctor pellentesque
+                      rhoncus. Et magna sit morbi lobortis.
+                    </p>
+                  </div>
+                </div>
+              )
+            })}
+
+            {/* <div>
               <div>
                 <span className="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
                   <svg
@@ -255,9 +258,9 @@ const Main = ({
                   Et magna sit morbi lobortis.
                 </p>
               </div>
-            </div>
+            </div> */}
 
-            <div>
+            {/* <div>
               <div>
                 <span className="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
                   <svg
@@ -284,9 +287,9 @@ const Main = ({
                   Et magna sit morbi lobortis.
                 </p>
               </div>
-            </div>
+            </div> */}
 
-            <div>
+            {/* <div>
               <div>
                 <span className="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
                   <svg
@@ -315,136 +318,12 @@ const Main = ({
                   Et magna sit morbi lobortis.
                 </p>
               </div>
-            </div>
-
-            <div>
-              <div>
-                <span className="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
-                  <svg
-                    className="h-6 w-6 text-white"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                    />
-                  </svg>
-                </span>
-              </div>
-              <div className="mt-6">
-                <h3 className="text-lg font-medium text-white">
-                  Team Reporting
-                </h3>
-                <p className="mt-2 text-base text-purple-200">
-                  Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.
-                  Et magna sit morbi lobortis.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <div>
-                <span className="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
-                  <svg
-                    className="h-6 w-6 text-white"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"
-                    />
-                  </svg>
-                </span>
-              </div>
-              <div className="mt-6">
-                <h3 className="text-lg font-medium text-white">
-                  Saved Replies
-                </h3>
-                <p className="mt-2 text-base text-purple-200">
-                  Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.
-                  Et magna sit morbi lobortis.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <div>
-                <span className="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
-                  <svg
-                    className="h-6 w-6 text-white"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
-                    />
-                  </svg>
-                </span>
-              </div>
-              <div className="mt-6">
-                <h3 className="text-lg font-medium text-white">
-                  Email Commenting
-                </h3>
-                <p className="mt-2 text-base text-purple-200">
-                  Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.
-                  Et magna sit morbi lobortis.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <div>
-                <span className="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
-                  <svg
-                    className="h-6 w-6 text-white"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                    />
-                  </svg>
-                </span>
-              </div>
-              <div className="mt-6">
-                <h3 className="text-lg font-medium text-white">
-                  Connect with Customers
-                </h3>
-                <p className="mt-2 text-base text-purple-200">
-                  Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.
-                  Et magna sit morbi lobortis.
-                </p>
-              </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
 
-      <div className="relative bg-gray-900">
+      {/* <div className="relative bg-gray-900">
         <div className="h-80 absolute inset-x-0 bottom-0 xl:top-0 xl:h-full">
           <div className="h-full w-full xl:grid xl:grid-cols-2">
             <div className="h-full xl:relative xl:col-start-2">
@@ -519,7 +398,7 @@ const Main = ({
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="bg-white">
         <div className="max-w-4xl mx-auto py-16 px-4 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 lg:flex lg:items-center lg:justify-between">

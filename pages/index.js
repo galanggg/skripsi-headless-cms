@@ -16,7 +16,7 @@ import { getAllPages, getAllPageById } from '../lib/api'
 export default function Home({ homePage }) {
   const homepage = homePage
   console.log(homePage)
-  console.log(Object.values(homePage.advantagesSection))
+
   return (
     <div className="bg-white">
       {/* <Nav />
@@ -31,12 +31,17 @@ export default function Home({ homePage }) {
       <Contact /> */}
       <Header />
       <Main
+        heroImage={homepage.featuredImage.node.sourceUrl}
         tagline={homepage.tagline.tagline}
         heroTitle={homepage.heroTitle.herotitle}
-        heroImage={homepage.featuredImage.node.sourceUrl}
         heroImageRight={homepage.heroImageRight.heroimageright.sourceUrl}
         heroImageLeft={homepage.heroImageLeft.heroimageleft.sourceUrl}
+        textLeft={homepage.textLeft.textleft}
+        textRight={homepage.textRight.textright}
+        textLeftDescription={homepage.textLeft.textleftdescription}
+        textRightDescription={homepage.textRight.textrightdescription}
         client={homepage.client.client}
+        advantagesSection={homePage.advantagesSection}
       />
       <Footer />
     </div>
