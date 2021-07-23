@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const Main = ({
   tagline,
   heroImage,
@@ -19,10 +21,12 @@ const Main = ({
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div className="relative shadow-xl sm:rounded-2xl sm:overflow-hidden">
             <div className="absolute inset-0">
-              <img
+              <Image
                 className="h-full w-full object-cover"
                 src={heroImage}
                 alt="People working on laptops"
+                layout="fill"
+                objectFit="cover"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-purple-800 to-indigo-700 mix-blend-multiply"></div>
             </div>
@@ -63,7 +67,7 @@ const Main = ({
             {client.map((image) => {
               return (
                 <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-                  <img className="h-12" src={image.sourceUrl} alt="Tuple" />
+                  <Image className="h-12" src={image.sourceUrl} alt="Tuple" width={120} height={60} />
                 </div>
               )
             })}
@@ -119,10 +123,12 @@ const Main = ({
             </div>
             <div className="mt-12 sm:mt-16 lg:mt-0">
               <div className="pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
-                <img
+                <Image
                   className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
                   src={heroImageRight}
                   alt="Inbox user interface"
+                  layout="fill"
+                objectFit="contain"
                 />
               </div>
             </div>
@@ -171,10 +177,12 @@ const Main = ({
             </div>
             <div className="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
               <div className="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
-                <img
+                <Image
                   className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
                   src={heroImageLeft}
                   alt="Customer profile user interface"
+                  layout="fill"
+                  objectFit="contain"
                 />
               </div>
             </div>
