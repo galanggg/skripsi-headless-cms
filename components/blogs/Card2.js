@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { LazyImage } from '../../lib/lazyimage'
 import { Base64 } from 'js-base64'
+import Image from 'next/image'
 
 const Card2 = ({ post }) => {
   const router = useRouter()
@@ -11,10 +12,12 @@ const Card2 = ({ post }) => {
   return (
     <div className="sm:max-w-md lg:max-w-xl md:max-w-lg rounded overflow-hidden shadow-lg text-white border-solid border-2 mt-4">
       <div className="wrapper">
-        <LazyImage
+        <Image
           className="w-full"
-          aspectRatio={16 / 9}
-          lqip={Base64.btoa(post.node.featuredImage.node.sourceUrl)}
+          layout="fixed"
+          width={400}
+          height={200}
+          objectFit="cover"
           src={post.node.featuredImage.node.sourceUrl}
           alt="img"
         />
