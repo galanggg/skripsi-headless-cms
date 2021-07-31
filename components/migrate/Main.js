@@ -67,7 +67,7 @@ const Main = ({
             {client.map((image) => {
               return (
                 <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-                  <Image className="h-12" src={image.sourceUrl} alt="Tuple" width={200} height={60} objectFit="contain" />
+                  <Image className="h-12 image-clients" src={image.sourceUrl} alt="Tuple" width={200} height={60} objectFit="contain" />
                 </div>
               )
             })}
