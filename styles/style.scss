@@ -96,3 +96,7 @@ html {
 .main-hero-wrapper {
   height: calc(100vh - 58px);
 }
+
+.image-clients {
+  filter: invert(62%) sepia(0%) saturate(62%) hue-rotate(157deg) brightness(94%) contrast(100%);
+}
