@@ -24,7 +24,7 @@
     "image-trace-loader": "^1.0.2",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",
-    "imagemin-svgo": "^8.0.0",
+    "imagemin-svgo": "^9.0.0",
     "js-base64": "^3.4.5",
     "lqip-loader": "^2.2.0",
     "masonic": "^3.3.3",
