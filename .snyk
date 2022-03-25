@@ -1,0 +1,50 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.22.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - node-sass > lodash:
+        patched: '2022-03-25T22:45:30.171Z'
+    - '@next/bundle-analyzer > webpack-bundle-analyzer > lodash':
+        patched: '2022-03-25T22:45:30.171Z'
+    - styled-components > @babel/traverse > lodash:
+        patched: '2022-03-25T22:45:30.171Z'
+    - '@svgr/webpack > @babel/core > lodash':
+        patched: '2022-03-25T22:45:30.171Z'
+    - image-trace-loader > node-vibrant > lodash:
+        patched: '2022-03-25T22:45:30.171Z'
+    - node-sass > sass-graph > lodash:
+        patched: '2022-03-25T22:45:30.171Z'
+    - styled-components > babel-plugin-styled-components > lodash:
+        patched: '2022-03-25T22:45:30.171Z'
+    - styled-components > @babel/traverse > @babel/types > lodash:
+        patched: '2022-03-25T22:45:30.171Z'
+    - '@svgr/webpack > @svgr/plugin-jsx > @babel/core > lodash':
+        patched: '2022-03-25T22:45:30.171Z'
+    - '@zeit/next-sass > sass-loader > async > lodash':
+        patched: '2022-03-25T22:45:30.171Z'
+    - next > styled-jsx > @babel/types > lodash:
+        patched: '2022-03-25T22:45:30.171Z'
+    - node-sass > gaze > globule > lodash:
+        patched: '2022-03-25T22:45:30.171Z'
+    - styled-components > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2022-03-25T22:45:30.171Z'
+    - '@svgr/webpack > @babel/preset-env > @babel/plugin-transform-classes > @babel/helper-define-map > lodash':
+        patched: '2022-03-25T22:45:30.171Z'
+    - styled-components > babel-plugin-styled-components > @babel/helper-annotate-as-pure > @babel/types > lodash:
+        patched: '2022-03-25T22:45:30.171Z'
+    - '@svgr/webpack > @babel/preset-env > @babel/plugin-transform-unicode-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-regex > lodash':
+        patched: '2022-03-25T22:45:30.171Z'
+    - styled-components > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
+        patched: '2022-03-25T22:45:30.171Z'
+    - '@svgr/webpack > @babel/preset-env > @babel/preset-modules > @babel/plugin-transform-dotall-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-regex > lodash':
+        patched: '2022-03-25T22:45:30.171Z'
+    - '@svgr/webpack > @svgr/core > @svgr/plugin-jsx > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > lodash':
+        patched: '2022-03-25T22:45:30.171Z'
+    - '@svgr/webpack > @svgr/core > @svgr/plugin-jsx > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/types > lodash':
+        patched: '2022-03-25T22:45:30.171Z'
+    - '@svgr/webpack > @svgr/core > @svgr/plugin-jsx > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash':
+        patched: '2022-03-25T22:45:30.171Z'
+    - '@svgr/webpack > @svgr/core > @svgr/plugin-jsx > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash':
+        patched: '2022-03-25T22:45:30.171Z'
