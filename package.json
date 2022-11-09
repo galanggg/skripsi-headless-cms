@@ -39,7 +39,7 @@
     "react-hook-form": "^6.3.0",
     "sass": "^1.26.10",
     "styled-components": "^5.1.1",
-    "twin.macro": "^2.0.0",
+    "twin.macro": "^3.0.0",
     "webp-loader": "^0.6.0"
   },
   "devDependencies": {
